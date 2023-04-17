@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deep Learning | ZHANG Boen</title>
+    <link>https://zhangboen.github.io/tag/deep-learning/</link>
+      <atom:link href="https://zhangboen.github.io/tag/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    <description>Deep Learning</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://zhangboen.github.io/media/icon_hu66f156bcb4ec49466497d7c909e27638_3427462_512x512_fill_lanczos_center_3.png</url>
+      <title>Deep Learning</title>
+      <link>https://zhangboen.github.io/tag/deep-learning/</link>
+    </image>
+    
+    <item>
+      <title>Coastal flood</title>
+      <link>https://zhangboen.github.io/project/coastal-flood/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://zhangboen.github.io/project/coastal-flood/</guid>
+      <description>&lt;p&gt;The overtopping of flood defenses by extreme storm surges during tropical cyclones poses a significant threat to life and property in coastal and estuarine regions. Since little effort has been devoted to investigating the complex interaction of multiple mechanisms causing extreme storm surges, for the first time, we propose a robust data-driven framework to explicitly uncover the complex interaction and thus to improve the characterization of extreme storm surges induced by tropical cyclones. The framework constructs a probabilistic ensemble of dependence structures of multiple climatological forcing factors that potentially cause extreme storm surges based on a multi-structure regular vine copula approach. The uncertainty in the vine-based model structure is explicitly addressed in a Bayesian framework. The climatological forcing factors sensitive to extreme storm surge levels are selected using partial correlations, including 10-m wind, 850-mb temperature, 700-mb geopotential height, precipitation, sea level pressure, and its spatial gradient extracted from the ERA5 reanalysis data.&lt;/p&gt;
+&lt;p&gt;I demonstrate the framework by an in-depth analysis of the extreme storm surge levels observed over two tidal gauging stations in Hong Kong during 1979–2018. The proposed framework substantially improves the characterization of extreme storm surges by taking into account the joint evolution of multiple mechanisms causing extreme storm surges and underlying uncertainties. Furthermore, the framework not only demonstrates higher skill than previous single-structure vine-based models but also can outperform the principal components regression and the random forest regression in terms of characterizing extreme storm surges.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Convection-permitting climate simulation</title>
+      <link>https://zhangboen.github.io/project/climate-simulation/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://zhangboen.github.io/project/climate-simulation/</guid>
+      <description>&lt;p&gt;To generate high-resolution climate information for projecting future changes in hydrologic regimes, the WRF model was used to perform multi-decadal convection-permitting climate projections over the GBA. The model configuration follows a two-way triple nesting setup with the outer two domains consisting of simulations with parameterized convection (D01 and D02), and the innermost domain of a simulation with the parameterization of deep convection switched off (D03). The outermost domain D01 covers a large part of China with 68 × 56 grid points at a 36 km resolution, while the nested domain D02 is resolved at a 12-km grid spacing (138 × 96 grid points). The innermost domain D03 covers the GBA at a 4-km grid spacing (216 × 171 grid points). The vertical direction is discretized using 21 stretched model levels topped at 50 hPa.&lt;/p&gt;
+&lt;p&gt;Convection-permitting simulations were separately conducted for the historical (1980–2005) and future (2074–2099) periods to assess climate change impacts on regional hydroclimatic regimes. The historical simulation was forced by the ECMWF reanalysis product, ERA-Interim, which has a 6-hr temporal resolution and a 0.75° × 0.75° spatial resolution. The future projection was forced with the ERA-Interim reanalysis consecutively perturbed using the PGW technique and GCM ensembles. In the PGW method, the future force was given by the combination of reanalysis data and a perturbated estimation from a 30-year ensemble of 10 CMIP5 GCMs under RCP8.5.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ensemble hydrologic prediction</title>
+      <link>https://zhangboen.github.io/project/hydrologic-prediction/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://zhangboen.github.io/project/hydrologic-prediction/</guid>
+      <description>&lt;p&gt;Physically based hydrologic models have been extensively used for hydroclimatic projections, but key challenges remain owing to the heavy computational burden and structural variability of physically based models. I develop a vine copula-based polynomial chaos framework for improving multi-model projections of hydroclimatic regimes at a convection-permitting scale over the Dongjiang River Basin located in South China. Specifically, a deep neural network (DNN)-based polynomial chaos expansion (PCE) is developed to significantly improve the efficiency of probabilistic hydrologic predictions. A vine copula multi-model ensemble approach is also proposed to robustly combine hydrologic predictions generated from multiple DNN-based PCEs to improve reliability and accuracy. To assess regional hydrologic responses to changing climate, multi-decadal nested-grid climate projections over the Guangdong-Hong Kong-Macao Greater Bay Area (GBA) are developed using the convection-permitting Weather Research and Forecasting (WRF) model with 4-km horizontal grid spacing.&lt;/p&gt;
+&lt;p&gt;I find that the DNN-based PCEs achieve comparable performance to the physically based hydrologic predictions with an extremely low computational cost. The vine copula multi-model ensemble approach outperforms the Bayesian model averaging (BMA) by generating more accurate and reliable hydrologic predictions. The developed framework and physical models also lead to consistent projections of future changes in streamflow regimes. Our findings reveal that the projected increases in the frequency and intensity of extreme precipitation can lead to substantial increases in flood magnitudes, but the increases may not be obvious for river basins affected by multiple reservoirs.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Urban flooding</title>
+      <link>https://zhangboen.github.io/project/urban-flooding/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://zhangboen.github.io/project/urban-flooding/</guid>
+      <description>&lt;p&gt;Precipitation intensity–duration–frequency (IDF) curves play a crucial role in the design and planning of urban infrastructure to reduce the risk of urban flooding and rainfall-triggered landslides. However, changing rainfall characteristics in a warming climate render conventional IDF curves inappropriate due to the statistical assumption of stationarity.&lt;/p&gt;
+&lt;p&gt;I develop vine copula-based projections of future IDF curves at sub-daily to multi-day time scales with a multi-model ensemble of five regional climate simulations over China. Stochastic spatiotemporal downscaling of precipitation is achieved to generate extreme precipitation simulations at a high spatial (0.1°) and temporal (3 hourly) resolution. These downscaled simulations are combined by the vine copula to improve the reliability and accuracy of climate-model-based IDF curves relative to historical observations.&lt;/p&gt;
+&lt;p&gt;I find that climate-model-based stochastic downscaling of precipitation reproduces the IDF curves well based on historical observations in China. The vine copula multi-model ensemble approach outperforms Bayesian model averaging by generating more accurate and reliable IDF curves. The urban areas of 196 Chinese cities are projected to experience an increase in extreme precipitation of up to 30% in intensity and nearly two times the frequency of historical events under a high emission scenario (RCP8.5). The current urban infrastructure of more than half of the 196 cities would thus be inadequate to prevent losses caused by rainfall-triggered hazards if designed solely based on historical precipitation observations. Compared to the climate-model-based IDF curves, we find that statistical IDF curves based on a nonstationary time covariate (i.e., extrapolating historical trends) are likely to underestimate the risk of urban infrastructure failures under a warming climate. This work highlights that urban infrastructure design guidelines in China should be upgraded to adapt existing IDF curves to the changing climate.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Vine copula-based flood risk</title>
+      <link>https://zhangboen.github.io/project/fluvial-flood/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://zhangboen.github.io/project/fluvial-flood/</guid>
+      <description>&lt;p&gt;Understanding future river flood risk is a prerequisite for developing climate change adaptation strategies and enhancing disaster resilience. Previous flood risk assessments can barely take into account future changes of fine-scale hydroclimatic characteristics and hardly quantify multivariate interactions among flood variables, thereby resulting in an unreliable assessment of flood risk. In this study, I develop probabilistic projections of multidimensional river flood risks at a convection-permitting scale through the Weather Research and Forecasting (WRF) climate simulations with 4-km horizontal grid spacing. Vine copula has been widely used to assess the multidimensional dependence structure of hydroclimate variables, but the commonly used frequentist approach may fail to identify the correct vine model and to obtain the uncertainty interval. Thus, a Bayesian vine copula approach is proposed to explicitly address the multidimensional dependence of flood characteristics (i.e., flood peak, volume, and duration) and underlying uncertainties.&lt;/p&gt;
+&lt;p&gt;The proposed approach enables a robust assessment of return periods of future floods for Guadalupe and Mission river basins located in South Texas of the United States. Our findings reveal that the South Texas region is projected to experience more flood events with longer duration and greater discharge volume. The flood peak, however, will not necessarily increase even though precipitation extremes are expected to become more frequent. The projected flood return periods over the Guadalupe river basin do not show an obvious increase while the Mission river basin is projected to face a dramatic increase in flood risk with exposed to 100-year and even severer floods nearly every 2 years, on average, when considering the combined effects of flood peak, volume, and duration.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
