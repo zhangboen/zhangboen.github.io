@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Urban flood | ZHANG Boen</title>
+    <link>https://zhangboen.github.io/category/urban-flood/</link>
+      <atom:link href="https://zhangboen.github.io/category/urban-flood/index.xml" rel="self" type="application/rss+xml" />
+    <description>Urban flood</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://zhangboen.github.io/media/icon_hu66f156bcb4ec49466497d7c909e27638_3427462_512x512_fill_lanczos_center_3.png</url>
+      <title>Urban flood</title>
+      <link>https://zhangboen.github.io/category/urban-flood/</link>
+    </image>
+    
+    <item>
+      <title>A vine copula-based ensemble projection of IDF curves at sub-daily to multi-day time scales</title>
+      <link>https://zhangboen.github.io/post/china-idf/</link>
+      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://zhangboen.github.io/post/china-idf/</guid>
+      <description>&lt;p&gt;Precipitation intensity–duration–frequency (IDF) curves play a crucial role in the design and planning of urban infrastructure to reduce the risk of urban flooding and rainfall-triggered landslides. However, changing rainfall characteristics in a warming climate render conventional IDF curves inappropriate due to the statistical assumption of stationarity. In this study, we develop vine copula-based projections of future IDF curves at sub-daily to multi-day time scales with a multi-model ensemble of five regional climate simulations over China. Stochastic spatiotemporal downscaling of precipitation is achieved to generate extreme precipitation simulations at a high spatial (0.1°) and temporal (3 hourly) resolution. These downscaled simulations are combined by the vine copula to improve the reliability and accuracy of climate-model-based IDF curves relative to historical observations. Our findings reveal that climate-model-based stochastic downscaling of precipitation reproduces the IDF curves well based on historical observations in China. The vine copula multi-model ensemble approach outperforms Bayesian model averaging by generating more accurate and reliable IDF curves. The urban areas of 196 Chinese cities are projected to experience an increase in extreme precipitation of up to 30% in intensity and nearly two times the frequency of historical events under a high emission scenario (RCP8.5). The current urban infrastructure of more than half of the 196 cities would thus be inadequate to prevent losses caused by rainfall-triggered hazards if designed solely based on historical precipitation observations. Compared to the climate-model-based IDF curves, we find that statistical IDF curves based on a nonstationary time covariate (i.e., extrapolating historical trends) are likely to underestimate the risk of urban infrastructure failures under a warming climate. This work highlights that urban infrastructure design guidelines in China should be upgraded to adapt existing IDF curves to the changing climate.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

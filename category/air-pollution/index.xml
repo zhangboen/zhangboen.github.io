@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Air pollution | ZHANG Boen</title>
+    <link>https://zhangboen.github.io/category/air-pollution/</link>
+      <atom:link href="https://zhangboen.github.io/category/air-pollution/index.xml" rel="self" type="application/rss+xml" />
+    <description>Air pollution</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 13 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://zhangboen.github.io/media/icon_hu66f156bcb4ec49466497d7c909e27638_3427462_512x512_fill_lanczos_center_3.png</url>
+      <title>Air pollution</title>
+      <link>https://zhangboen.github.io/category/air-pollution/</link>
+    </image>
+    
+    <item>
+      <title>Influences of wind and precipitation on different-sized particulate matter concentrations</title>
+      <link>https://zhangboen.github.io/post/pm25/</link>
+      <pubDate>Wed, 13 Dec 2017 00:00:00 +0000</pubDate>
+      <guid>https://zhangboen.github.io/post/pm25/</guid>
+      <description>&lt;p&gt;Though it is recognized that meteorology has a great impact on the diffusion, accumulation and transport of air pollutants, few studies have investigated the impacts on different-sized particulate matter concentrations. We conducted a systematic comparative analysis and used the framework of generalized additive models (GAMs) to explore the influences of critical meteorological parameters, wind and precipitation, on PM2.5, PM10 and PM2.5–10 concentrations in Wuhan during 2013–2016. Overall, results showed that the impacts of wind and precipitation on different-sized PM concentrations are significantly different. The fine PM concentrations decreased gradually with the increase of wind speed, while coarse PM concentrations would increase due to dust resuspension under strong wind. Wind direction exerts limited influence on coarse PM concentrations. Wind speed was linearly correlated with log-transformed PM2.5 concentrations, but nonlinearly correlated with log-transformed PM10 and PM2.5–10 concentrations. We also found the PM2.5 and PM2.5–10 concentrations decreased by nearly 60 and 15% when the wind speed was up to 6 m/s, respectively, indicating a stronger negative impact of wind-speed on fine PM than coarse PM. The scavenging efficiency of precipitation on PM2.5–10 was over twice as high as on PM2.5. Our findings may help to understand the impacts of meteorology on different PM concentrations as well as discriminate and forecast variation in particulate matter concentrations.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

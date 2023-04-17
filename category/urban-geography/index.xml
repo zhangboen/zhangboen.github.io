@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Urban geography | ZHANG Boen</title>
+    <link>https://zhangboen.github.io/category/urban-geography/</link>
+      <atom:link href="https://zhangboen.github.io/category/urban-geography/index.xml" rel="self" type="application/rss+xml" />
+    <description>Urban geography</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 13 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://zhangboen.github.io/media/icon_hu66f156bcb4ec49466497d7c909e27638_3427462_512x512_fill_lanczos_center_3.png</url>
+      <title>Urban geography</title>
+      <link>https://zhangboen.github.io/category/urban-geography/</link>
+    </image>
+    
+    <item>
+      <title>Scale effects of spatial autocorrelation</title>
+      <link>https://zhangboen.github.io/post/scale-effect/</link>
+      <pubDate>Thu, 13 Dec 2018 00:00:00 +0000</pubDate>
+      <guid>https://zhangboen.github.io/post/scale-effect/</guid>
+      <description>&lt;p&gt;The scale effects of the spatial autocorrelation (SA) measurement have been explored for decades. However, the effects of the data aggregation levels and spatial resolution on the SA measurement are often confused. Whether the two types of scale effects are the same is still unclear and requires further investigation. We retrieved the land surface temperature (LST) from Landsat 8 images in 30 capital cities of China. By aggregating the LST images, we observed a decrease in the SA of the LST as the data aggregation level increased; this relationship can be fitted well with a negative logarithmic function. We derived an indicator to measure the scale effects intensity of SA, which was negatively correlated with the spatial complexity of LST. Both aggregating images and the increasing spatial resolution induce weaker SA, but the effect of the former was stronger. The aggregating images negatively affected the SA degree regardless of the spatial resolutions of the original images. The SA degrees of the aggregated images were far below those of the real-life images. This study suggests that the scale effects caused by aggregation levels and spatial resolutions are different, and cautions should be taken when applying relevant conclusions derived from aggregating images.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
