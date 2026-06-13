@@ -69,7 +69,7 @@ footer .list-inline.text-center {
 
 .navbar-custom .navbar-brand,
 .navbar-custom .nav li a {
-    text-shadow: 0 2px 7px rgba(0, 0, 0, 0.9);
+    text-shadow: none;
 }
 
 .navbar-custom .navbar-brand {
