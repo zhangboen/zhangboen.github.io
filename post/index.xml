@@ -1,88 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts | ZHANG Boen</title>
-    <link>https://zhangboen.github.io/post/</link>
-      <atom:link href="https://zhangboen.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    <description>Posts</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate>
-    <image>
-      <url>https://zhangboen.github.io/media/icon_hu66f156bcb4ec49466497d7c909e27638_3427462_512x512_fill_lanczos_center_3.png</url>
-      <title>Posts</title>
-      <link>https://zhangboen.github.io/post/</link>
-    </image>
-    
-    <item>
-      <title>A vine copula-based ensemble projection of IDF curves at sub-daily to multi-day time scales</title>
-      <link>https://zhangboen.github.io/post/china-idf/</link>
-      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>https://zhangboen.github.io/post/china-idf/</guid>
-      <description>&lt;p&gt;Precipitation intensity–duration–frequency (IDF) curves play a crucial role in the design and planning of urban infrastructure to reduce the risk of urban flooding and rainfall-triggered landslides. However, changing rainfall characteristics in a warming climate render conventional IDF curves inappropriate due to the statistical assumption of stationarity. In this study, we develop vine copula-based projections of future IDF curves at sub-daily to multi-day time scales with a multi-model ensemble of five regional climate simulations over China. Stochastic spatiotemporal downscaling of precipitation is achieved to generate extreme precipitation simulations at a high spatial (0.1°) and temporal (3 hourly) resolution. These downscaled simulations are combined by the vine copula to improve the reliability and accuracy of climate-model-based IDF curves relative to historical observations. Our findings reveal that climate-model-based stochastic downscaling of precipitation reproduces the IDF curves well based on historical observations in China. The vine copula multi-model ensemble approach outperforms Bayesian model averaging by generating more accurate and reliable IDF curves. The urban areas of 196 Chinese cities are projected to experience an increase in extreme precipitation of up to 30% in intensity and nearly two times the frequency of historical events under a high emission scenario (RCP8.5). The current urban infrastructure of more than half of the 196 cities would thus be inadequate to prevent losses caused by rainfall-triggered hazards if designed solely based on historical precipitation observations. Compared to the climate-model-based IDF curves, we find that statistical IDF curves based on a nonstationary time covariate (i.e., extrapolating historical trends) are likely to underestimate the risk of urban infrastructure failures under a warming climate. This work highlights that urban infrastructure design guidelines in China should be upgraded to adapt existing IDF curves to the changing climate.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>A vine copula-based polynomial chaos framework for improving multi-model hydroclimatic projections</title>
-      <link>https://zhangboen.github.io/post/pce-vine/</link>
-      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>https://zhangboen.github.io/post/pce-vine/</guid>
-      <description>&lt;p&gt;Physically based hydrologic models have been extensively used for hydroclimatic projections, but key challenges remain owing to the heavy computational burden and structural variability of physically based models. In this study, we develop a vine copula-based polynomial chaos framework for improving multi-model projections of hydroclimatic regimes at a convection-permitting scale over the Dongjiang River Basin located in South China. Specifically, a deep neural network (DNN)-based polynomial chaos expansion (PCE) is developed to significantly improve the efficiency of probabilistic hydrologic predictions. A vine copula multi-model ensemble approach is also proposed to robustly combine hydrologic predictions generated from multiple DNN-based PCEs to improve reliability and accuracy. To assess regional hydrologic responses to changing climate, multi-decadal nested-grid climate projections over the Guangdong-Hong Kong-Macao Greater Bay Area (GBA) are developed using the convection-permitting Weather Research and Forecasting (WRF) model with 4-km horizontal grid spacing. Our findings reveal that the DNN-based PCEs achieve comparable performance to the physically based hydrologic predictions with an extremely low computational cost. The vine copula multi-model ensemble approach outperforms the Bayesian model averaging (BMA) by generating more accurate and reliable hydrologic predictions. The developed framework and physical models also lead to consistent projections of future changes in streamflow regimes. Our findings reveal that the projected increases in the frequency and intensity of extreme precipitation can lead to substantial increases in flood magnitudes, but the increases may not be obvious for river basins affected by multiple reservoirs.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Future changes in multivariate drought characteristics at Texas</title>
-      <link>https://zhangboen.github.io/post/text-drought/</link>
-      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>https://zhangboen.github.io/post/text-drought/</guid>
-      <description>&lt;p&gt;Probabilistic projections of future drought characteristics play a crucial role in climate change adaptation and disaster risk reduction. This study presents a copula-based probabilistic framework for projecting future changes in multivariable drought characteristics through convection-permitting Weather Research and Forecasting simulations with 4-km horizontal grid spacing. A probabilistic multivariate drought index is introduced to examine the joint effects of drought indicators with uncertainty intervals for four major river basins located in South Central Texas of the United States. Markov chain Monte Carlo is used to address uncertainties in assessing copula parameters and in predicting climate-induced changes in hydrological regimes. Our findings reveal that the severity and intensity of drought episodes can be amplified when considering the compound effects of soil moisture and runoff regimes by using the probabilistic multivariate drought index. The South Central Texas region is projected to experience more drought events with shorter duration and higher intensity in a changing climate. The drought severity will not necessarily increase due to the decreasing drought duration. In addition, our findings indicate that the intensity of future droughts is expected to increase as a result of the deficiency of soil moisture even though precipitation extremes are projected to become more frequent. Moreover, climate change impacts on multivariate drought characteristics will intensify with the increasing temporal scales (i.e., short-, medium-, and long-term droughts) although the number of future drought events may decrease by the end of this century.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Probabilistic characterization of extreme storm surges induced by tropical cyclones</title>
-      <link>https://zhangboen.github.io/post/storm-surge/</link>
-      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>https://zhangboen.github.io/post/storm-surge/</guid>
-      <description>&lt;p&gt;The overtopping of flood defenses by extreme storm surges during tropical cyclones poses a significant threat to life and property in coastal and estuarine regions. Since little effort has been devoted to investigating the complex interaction of multiple mechanisms causing extreme storm surges, for the first time, we propose a robust data-driven framework to explicitly uncover the complex interaction and thus to improve the characterization of extreme storm surges induced by tropical cyclones. The framework constructs a probabilistic ensemble of dependence structures of multiple climatological forcing factors that potentially cause extreme storm surges based on a multi-structure regular vine copula approach. The uncertainty in the vine-based model structure is explicitly addressed in a Bayesian framework. The climatological forcing factors sensitive to extreme storm surge levels are selected using partial correlations, including 10-m wind, 850-mb temperature, 700-mb geopotential height, precipitation, sea level pressure, and its spatial gradient extracted from the ERA5 reanalysis data. We demonstrate the framework by an in-depth analysis of the extreme storm surge levels observed over two tidal gauging stations in Hong Kong during 1979–2018. Our findings show that the proposed framework substantially improves the characterization of extreme storm surges by taking into account the joint evolution of multiple mechanisms causing extreme storm surges and underlying uncertainties. Furthermore, the framework not only demonstrates higher skill than previous single-structure vine-based models but also can outperform the principal components regression and the random forest regression in terms of characterizing extreme storm surges.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Probabilistic projections of multidimensional flood risks at a convection-permitting scale</title>
-      <link>https://zhangboen.github.io/post/texas-flood/</link>
-      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>https://zhangboen.github.io/post/texas-flood/</guid>
-      <description>&lt;p&gt;Understanding future river flood risk is a prerequisite for developing climate change adaptation strategies and enhancing disaster resilience. Previous flood risk assessments can barely take into account future changes of fine-scale hydroclimatic characteristics and hardly quantify multivariate interactions among flood variables, thereby resulting in an unreliable assessment of flood risk. In this study, for the first time, we develop probabilistic projections of multidimensional river flood risks at a convection-permitting scale through the Weather Research and Forecasting (WRF) climate simulations with 4-km horizontal grid spacing. Vine copula has been widely used to assess the multidimensional dependence structure of hydroclimate variables, but the commonly used frequentist approach may fail to identify the correct vine model and to obtain the uncertainty interval. Thus, a Bayesian vine copula approach is proposed to explicitly address the multidimensional dependence of flood characteristics (i.e., flood peak, volume, and duration) and underlying uncertainties. The proposed approach enables a robust assessment of return periods of future floods for Guadalupe and Mission river basins located in South Texas of the United States. Our findings reveal that the South Texas region is projected to experience more flood events with longer duration and greater discharge volume. The flood peak, however, will not necessarily increase even though precipitation extremes are expected to become more frequent. The projected flood return periods over the Guadalupe river basin do not show an obvious increase while the Mission river basin is projected to face a dramatic increase in flood risk with exposed to 100-year and even severer floods nearly every 2 years, on average, when considering the combined effects of flood peak, volume, and duration.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Spatiotemporal evolution of multidimensional drought risks in China</title>
-      <link>https://zhangboen.github.io/post/china-drought/</link>
-      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>https://zhangboen.github.io/post/china-drought/</guid>
-      <description>&lt;p&gt;Understanding future drought risks plays a crucial role in developing climate change adaptation strategies and in enhancing disaster resilience. However, previous studies may lead to biased conclusions due to the neglect of two factors, including the relative performance of climate simulations and the uncertainty in drought characterization. In this study, Bayesian model averaging is used to merge five regional climate model simulations and to project future changes in hydroclimatic regimes over China under two representative emission scenarios (RCP4.5 and RCP8.5). Drought characteristics, including drought severity and duration, are extracted using the Standardized Precipitation Evapotranspiration Index (SPEI). A Bayesian copula approach is used to uncover underlying interactions of drought characteristics and associated uncertainties across 10 climate divisions of China. The regional return periods of drought characteristics are used to assess future changes in multidimensional drought risks and the probability of extreme droughts. Our findings reveal that the variations in drought characteristics are generally underestimated by the ensemble mean (AEM) simulation. The Bayesian framework improves the reliability and accuracy of hydroclimate simulations and better reproduces the drought regimes compared to the AEM simulation. The drought duration and severity are projected to substantially increase for most areas of China based on the Bayesian framework, but the AEM simulation may lead to multiple opposite behaviors, especially under RCP4.5. The estimated joint risk from drought duration and drought severity is expected to increase under both emission scenarios. The likelihood of extreme droughts is also projected to increase as the radiative forcing increases.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Scale effects of spatial autocorrelation</title>
-      <link>https://zhangboen.github.io/post/scale-effect/</link>
-      <pubDate>Thu, 13 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://zhangboen.github.io/post/scale-effect/</guid>
-      <description>&lt;p&gt;The scale effects of the spatial autocorrelation (SA) measurement have been explored for decades. However, the effects of the data aggregation levels and spatial resolution on the SA measurement are often confused. Whether the two types of scale effects are the same is still unclear and requires further investigation. We retrieved the land surface temperature (LST) from Landsat 8 images in 30 capital cities of China. By aggregating the LST images, we observed a decrease in the SA of the LST as the data aggregation level increased; this relationship can be fitted well with a negative logarithmic function. We derived an indicator to measure the scale effects intensity of SA, which was negatively correlated with the spatial complexity of LST. Both aggregating images and the increasing spatial resolution induce weaker SA, but the effect of the former was stronger. The aggregating images negatively affected the SA degree regardless of the spatial resolutions of the original images. The SA degrees of the aggregated images were far below those of the real-life images. This study suggests that the scale effects caused by aggregation levels and spatial resolutions are different, and cautions should be taken when applying relevant conclusions derived from aggregating images.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Influences of wind and precipitation on different-sized particulate matter concentrations</title>
-      <link>https://zhangboen.github.io/post/pm25/</link>
-      <pubDate>Wed, 13 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>https://zhangboen.github.io/post/pm25/</guid>
-      <description>&lt;p&gt;Though it is recognized that meteorology has a great impact on the diffusion, accumulation and transport of air pollutants, few studies have investigated the impacts on different-sized particulate matter concentrations. We conducted a systematic comparative analysis and used the framework of generalized additive models (GAMs) to explore the influences of critical meteorological parameters, wind and precipitation, on PM2.5, PM10 and PM2.5–10 concentrations in Wuhan during 2013–2016. Overall, results showed that the impacts of wind and precipitation on different-sized PM concentrations are significantly different. The fine PM concentrations decreased gradually with the increase of wind speed, while coarse PM concentrations would increase due to dust resuspension under strong wind. Wind direction exerts limited influence on coarse PM concentrations. Wind speed was linearly correlated with log-transformed PM2.5 concentrations, but nonlinearly correlated with log-transformed PM10 and PM2.5–10 concentrations. We also found the PM2.5 and PM2.5–10 concentrations decreased by nearly 60 and 15% when the wind speed was up to 6 m/s, respectively, indicating a stronger negative impact of wind-speed on fine PM than coarse PM. The scavenging efficiency of precipitation on PM2.5–10 was over twice as high as on PM2.5. Our findings may help to understand the impacts of meteorology on different PM concentrations as well as discriminate and forecast variation in particulate matter concentrations.&lt;/p&gt;
-</description>
-    </item>
-    
+    <title>Posts on Hydroclimate Extremes Lab</title>
+    <link>http://localhost:1313/post/</link>
+    <description>Recent content in Posts on Hydroclimate Extremes Lab</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
