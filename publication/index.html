@@ -37,9 +37,9 @@
     
 
     
-    <meta name="description" content="张博恩，助理教授 | 这里是 张博恩课题组 的博客，分享课题组最新成果。">
-    <meta property="og:description" content="张博恩，助理教授 | 这里是 张博恩课题组 的博客，分享课题组最新成果。" />
-    <meta property="twitter:description" content="张博恩，助理教授 | 这里是 张博恩课题组 的博客，分享课题组最新成果。" />
+    <meta name="description" content="Hydroclimate Extremes Lab led by Boen Zhang at Sun Yat-sen University, focusing on floods, extreme precipitation, droughts, heatwaves, compound events, hydrological forecasting, and climate risk.">
+    <meta property="og:description" content="Hydroclimate Extremes Lab led by Boen Zhang at Sun Yat-sen University, focusing on floods, extreme precipitation, droughts, heatwaves, compound events, hydrological forecasting, and climate risk." />
+    <meta property="twitter:description" content="Hydroclimate Extremes Lab led by Boen Zhang at Sun Yat-sen University, focusing on floods, extreme precipitation, droughts, heatwaves, compound events, hydrological forecasting, and climate risk." />
     
 
     <meta property="og:url" content="https://zhangboen.github.io/publication/" />
@@ -49,7 +49,7 @@
     
     
 
-    <meta name="keyword"  content="张博恩, ZhangBoen, ZhangBoen Blog, 课题组网站, 科研, Hydrology, Climate">
+    <meta name="keyword"  content="Boen Zhang, Zhang Boen, Hydroclimate Extremes Lab, Sun Yat-sen University, hydrology, hydroclimate extremes, floods, droughts, heatwaves, compound events, hydrological forecasting, climate risk, 张博恩, 中山大学">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <title>Publication | Hydroclimate Extremes Lab</title>
@@ -258,7 +258,22 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-         	<h2 id="selected-publications">Selected Publications</h2>
+                
+
+  
+
+
+
+   
+ <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+    <option value="0" selected> 中文 | Chinese </option>
+    <option value="1"> 英文 | English </option>
+</select>
+  
+  
+
+  <div class="zh post-container">
+    <h2 id="代表性论文">代表性论文</h2>
 <ol>
 <li>Zhang, B., Wang, S., Slater, L. (2024). Anthropogenic climate change doubled the frequency of compound drought and heatwaves in low-income regions. Communications Earth &amp; Environment, 5, 715.</li>
 <li>Zhang, B., Wang, S., Zscheischler, J., &amp; Moradkhani, H. (2023). Higher exposure of poorer people to emerging weather whiplash in a warmer world. Geophysical Research Letters, 50, e2023GL105640.</li>
@@ -269,6 +284,24 @@
 <li>Zhang, B., Wang, S. (2021). Probabilistic characterization of extreme storm surges induced by tropical cyclones. Journal of Geophysical Research: Atmospheres, 126(3), e2020JD033557.</li>
 <li>Zhang, B., Wang, S., Wang, Y. (2019). Copula-based convection-permitting projections of future changes in multivariate drought characteristics. Journal of Geophysical Research: Atmospheres, 124(14), 7460-7483.</li>
 </ol>
+
+  </div>
+
+  <div class="en post-container">
+    <h2 id="selected-publications">Selected Publications</h2>
+<ol>
+<li>Zhang, B., Wang, S., Slater, L. (2024). Anthropogenic climate change doubled the frequency of compound drought and heatwaves in low-income regions. Communications Earth &amp; Environment, 5, 715.</li>
+<li>Zhang, B., Wang, S., Zscheischler, J., &amp; Moradkhani, H. (2023). Higher exposure of poorer people to emerging weather whiplash in a warmer world. Geophysical Research Letters, 50, e2023GL105640.</li>
+<li>Zhang, B., Wang, S., Moradkhani, H., Slater, L., Liu, J. (2022). A vine copula-based ensemble projection of precipitation intensity-duration-frequency curves at sub-daily to multi-day time scales. Water Resources Research, 58, e2022WR032658.</li>
+<li>Zhang, B., Wang, S., Qing, Y., Zhu, J., Wang, D., Liu, J. (2022). A vine copula-based polynomial chaos framework for improving multi-model hydroclimatic projections at a multi-decadal convection-permitting scale. Water Resources Research, 58, e2022WR031954.</li>
+<li>Zhang, B., Wang, S., Zhu, J. (2022). A weighted ensemble of regional climate projections for exploring the spatiotemporal evolution of multidimensional drought risks in a changing climate. Climate Dynamics, 58(1), 49-68.</li>
+<li>Zhang, B., Wang, S., Wang, Y. (2021). Probabilistic projections of multidimensional flood risks at a convection-permitting scale. Water Resources Research, 57(1), e2020WR028582.</li>
+<li>Zhang, B., Wang, S. (2021). Probabilistic characterization of extreme storm surges induced by tropical cyclones. Journal of Geophysical Research: Atmospheres, 126(3), e2020JD033557.</li>
+<li>Zhang, B., Wang, S., Wang, Y. (2019). Copula-based convection-permitting projections of future changes in multivariate drought characteristics. Journal of Geophysical Research: Atmospheres, 124(14), 7460-7483.</li>
+</ol>
+
+  </div>
+
 
                 
 
@@ -520,6 +553,105 @@
 </script>
 
 
+
+<script type="text/javascript">
+    var $zh = document.querySelector(".zh");
+    var $en = document.querySelector(".en");
+    var $select = document.querySelector(".sel-lang");
+    var LANG_KEY = "sitePreferredLang";
+
+    
+    function getLang() { return new URLSearchParams(document.location.search).get("lang") }
+
+    function setLang(newLang) {
+        window.localStorage.setItem(LANG_KEY, newLang);
+        var params = new URLSearchParams(document.location.search);
+        params.set("lang", newLang);
+        document.location.search = params.toString();
+    }
+
+    function setNavLang(lang) {
+        var labels = {
+            en: {
+                "/": "Home",
+                "/research/": "Research",
+                "/publication/": "Publications",
+                "/categories/project/": "Project",
+                "/about/": "CV"
+            },
+            zh: {
+                "/": "首页",
+                "/research/": "研究",
+                "/publication/": "论文",
+                "/categories/project/": "项目",
+                "/about/": "简历"
+            }
+        };
+        document.querySelectorAll(".navbar-custom .nav a").forEach(function(link) {
+            var path = new URL(link.href, document.location.origin).pathname;
+            if (labels[lang][path]) {
+                link.textContent = labels[lang][path];
+            }
+        });
+    }
+
+    
+    function _render() {
+        var lang = getLang() || window.localStorage.getItem(LANG_KEY) || "en";
+        
+        if (lang == "zh") {
+            $select.selectedIndex = 0;
+            $zh.style.display = "block";
+            $zh.classList.add("active");
+            $en.style.display = "none";
+            $en.classList.remove("active");
+            
+        } else {
+            $select.selectedIndex = 1;
+            $en.style.display = "block";
+            $en.classList.add("active");
+            $zh.style.display = "none";
+            $zh.classList.remove("active");
+        }
+        setNavLang(lang);
+        
+        generateCatalog(".catalog-body");
+    }
+
+    
+    function onLanChange(index) {
+        if (index == 0) {
+            lang = "zh"
+        } else {
+            lang = "en"
+        }
+        setLang(lang)
+    }
+
+    function inferInitialLang() {
+        if (getLang() || window.localStorage.getItem(LANG_KEY)) {
+            return;
+        }
+
+        var browserLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
+        var browserGuess = browserLang.indexOf("zh") === 0 ? "zh" : "en";
+
+        fetch("https://ipapi.co/json/")
+            .then(function(response) { return response.ok ? response.json() : null; })
+            .then(function(data) {
+                var country = data && data.country_code;
+                var zhRegions = ["CN", "HK", "MO", "TW"];
+                setLang(zhRegions.indexOf(country) >= 0 ? "zh" : "en");
+            })
+            .catch(function() {
+                setLang(browserGuess);
+            });
+    }
+
+    
+    inferInitialLang();
+    _render();
+</script>
 
 
 

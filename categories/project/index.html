@@ -37,9 +37,9 @@
     
 
     
-    <meta name="description" content="张博恩，助理教授 | 这里是 张博恩课题组 的博客，分享课题组最新成果。">
-    <meta property="og:description" content="张博恩，助理教授 | 这里是 张博恩课题组 的博客，分享课题组最新成果。" />
-    <meta property="twitter:description" content="张博恩，助理教授 | 这里是 张博恩课题组 的博客，分享课题组最新成果。" />
+    <meta name="description" content="Hydroclimate Extremes Lab led by Boen Zhang at Sun Yat-sen University, focusing on floods, extreme precipitation, droughts, heatwaves, compound events, hydrological forecasting, and climate risk.">
+    <meta property="og:description" content="Hydroclimate Extremes Lab led by Boen Zhang at Sun Yat-sen University, focusing on floods, extreme precipitation, droughts, heatwaves, compound events, hydrological forecasting, and climate risk." />
+    <meta property="twitter:description" content="Hydroclimate Extremes Lab led by Boen Zhang at Sun Yat-sen University, focusing on floods, extreme precipitation, droughts, heatwaves, compound events, hydrological forecasting, and climate risk." />
     
 
     <meta property="og:url" content="https://zhangboen.github.io/categories/project/" />
@@ -49,7 +49,7 @@
     
     
 
-    <meta name="keyword"  content="张博恩, ZhangBoen, ZhangBoen Blog, 课题组网站, 科研, Hydrology, Climate">
+    <meta name="keyword"  content="Boen Zhang, Zhang Boen, Hydroclimate Extremes Lab, Sun Yat-sen University, hydrology, hydroclimate extremes, floods, droughts, heatwaves, compound events, hydrological forecasting, climate risk, 张博恩, 中山大学">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <title>Project | Hydroclimate Extremes Lab</title>
@@ -260,8 +260,31 @@
     ">
       
       <div class="category-intro">
-        <h2 id="project">Project</h2>
+        
+
+  
+
+
+
+   
+ <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+    <option value="0" selected> 中文 | Chinese </option>
+    <option value="1"> 英文 | English </option>
+</select>
+  
+  
+
+  <div class="zh post-container">
+    <h2 id="项目">项目</h2>
+<p>这里可以放置课题组正在开展或计划开展的研究项目介绍。你可以在 <code>content/categories/project/_index-zh.md</code> 中编辑这段文字。</p>
+  </div>
+
+  <div class="en post-container">
+    <h2 id="project">Project</h2>
 <p>Write your project page message here. This text appears above the project post list and can be edited in <code>content/categories/project/_index.md</code>.</p>
+
+  </div>
+
 
       </div>
       <hr>
@@ -591,6 +614,105 @@
 </script>
 
 
+
+<script type="text/javascript">
+    var $zh = document.querySelector(".zh");
+    var $en = document.querySelector(".en");
+    var $select = document.querySelector(".sel-lang");
+    var LANG_KEY = "sitePreferredLang";
+
+    
+    function getLang() { return new URLSearchParams(document.location.search).get("lang") }
+
+    function setLang(newLang) {
+        window.localStorage.setItem(LANG_KEY, newLang);
+        var params = new URLSearchParams(document.location.search);
+        params.set("lang", newLang);
+        document.location.search = params.toString();
+    }
+
+    function setNavLang(lang) {
+        var labels = {
+            en: {
+                "/": "Home",
+                "/research/": "Research",
+                "/publication/": "Publications",
+                "/categories/project/": "Project",
+                "/about/": "CV"
+            },
+            zh: {
+                "/": "首页",
+                "/research/": "研究",
+                "/publication/": "论文",
+                "/categories/project/": "项目",
+                "/about/": "简历"
+            }
+        };
+        document.querySelectorAll(".navbar-custom .nav a").forEach(function(link) {
+            var path = new URL(link.href, document.location.origin).pathname;
+            if (labels[lang][path]) {
+                link.textContent = labels[lang][path];
+            }
+        });
+    }
+
+    
+    function _render() {
+        var lang = getLang() || window.localStorage.getItem(LANG_KEY) || "en";
+        
+        if (lang == "zh") {
+            $select.selectedIndex = 0;
+            $zh.style.display = "block";
+            $zh.classList.add("active");
+            $en.style.display = "none";
+            $en.classList.remove("active");
+            
+        } else {
+            $select.selectedIndex = 1;
+            $en.style.display = "block";
+            $en.classList.add("active");
+            $zh.style.display = "none";
+            $zh.classList.remove("active");
+        }
+        setNavLang(lang);
+        
+        generateCatalog(".catalog-body");
+    }
+
+    
+    function onLanChange(index) {
+        if (index == 0) {
+            lang = "zh"
+        } else {
+            lang = "en"
+        }
+        setLang(lang)
+    }
+
+    function inferInitialLang() {
+        if (getLang() || window.localStorage.getItem(LANG_KEY)) {
+            return;
+        }
+
+        var browserLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
+        var browserGuess = browserLang.indexOf("zh") === 0 ? "zh" : "en";
+
+        fetch("https://ipapi.co/json/")
+            .then(function(response) { return response.ok ? response.json() : null; })
+            .then(function(data) {
+                var country = data && data.country_code;
+                var zhRegions = ["CN", "HK", "MO", "TW"];
+                setLang(zhRegions.indexOf(country) >= 0 ? "zh" : "en");
+            })
+            .catch(function() {
+                setLang(browserGuess);
+            });
+    }
+
+    
+    inferInitialLang();
+    _render();
+</script>
 
 
 

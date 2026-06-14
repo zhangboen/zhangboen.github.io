@@ -37,9 +37,9 @@
     
 
     
-    <meta name="description" content="张博恩，助理教授 | 这里是 张博恩课题组 的博客，分享课题组最新成果。">
-    <meta property="og:description" content="张博恩，助理教授 | 这里是 张博恩课题组 的博客，分享课题组最新成果。" />
-    <meta property="twitter:description" content="张博恩，助理教授 | 这里是 张博恩课题组 的博客，分享课题组最新成果。" />
+    <meta name="description" content="Hydroclimate Extremes Lab led by Boen Zhang at Sun Yat-sen University, focusing on floods, extreme precipitation, droughts, heatwaves, compound events, hydrological forecasting, and climate risk.">
+    <meta property="og:description" content="Hydroclimate Extremes Lab led by Boen Zhang at Sun Yat-sen University, focusing on floods, extreme precipitation, droughts, heatwaves, compound events, hydrological forecasting, and climate risk." />
+    <meta property="twitter:description" content="Hydroclimate Extremes Lab led by Boen Zhang at Sun Yat-sen University, focusing on floods, extreme precipitation, droughts, heatwaves, compound events, hydrological forecasting, and climate risk." />
     
 
     <meta property="og:url" content="https://zhangboen.github.io/about/" />
@@ -49,7 +49,7 @@
     
     
 
-    <meta name="keyword"  content="张博恩, ZhangBoen, ZhangBoen Blog, 课题组网站, 科研, Hydrology, Climate">
+    <meta name="keyword"  content="Boen Zhang, Zhang Boen, Hydroclimate Extremes Lab, Sun Yat-sen University, hydrology, hydroclimate extremes, floods, droughts, heatwaves, compound events, hydrological forecasting, climate risk, 张博恩, 中山大学">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <title>Hydroclimate Extremes Lab</title>
@@ -260,16 +260,21 @@
             col-xs-12
             post-container">
             
-                 
+
+  
+
+
+
+   
  <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
     <option value="0" selected> 中文 | Chinese </option>
     <option value="1"> 英文 | English </option>
 </select>
+  
+  
 
-                
-                <div class="zh post-container">
-                    
-                    <h2 id="关于我">关于我</h2>
+  <div class="zh post-container">
+    <h2 id="关于我">关于我</h2>
 <p>您好，我目前是中山大学地理科学与规划学院水文气候学助理教授。我于 2022 年在香港理工大学获得水文与气候科学方向博士学位，导师为 Prof. Shuo Wang。在加入中山大学之前，我曾在牛津大学 Prof. Louise Slater 领导的 Hydro-Climate Extremes Research Group 从事博士后研究。</p>
 <p>我的研究聚焦于极端天气与气候事件、基于机器学习的洪水预测、气候变化影响、多变量统计方法（包括 copula 与 pair-copula constructions）以及水文建模。我使用机器学习方法和气候模式输出改进全球洪水预测与预估，并发展和应用多变量概率方法评估气候变化背景下水文气候极端事件的特征、灾害与风险。此外，我还利用气候模拟和水文模型研究变暖气候下并发与连续水相关灾害的未来变化。</p>
 <p>欢迎通过 <a href="mailto:zhangben@mail.sysu.edu.cn">email</a> 与我联系并交流想法。</p>
@@ -293,11 +298,10 @@
 <li>Zhang, B., Wang, S., Wang, Y. (2019). Copula-based convection-permitting projections of future changes in multivariate drought characteristics. Journal of Geophysical Research: Atmospheres, 124(14), 7460-7483.</li>
 </ol>
 
-                </div>
-            
-                
-                <div class="en post-container">
-                    <h2 id="about-me">About Me</h2>
+  </div>
+
+  <div class="en post-container">
+    <h2 id="about-me">About Me</h2>
 <p>Hi, I am currently an assistant professor of hydroclimatology in the School of Geography and Planning at Sun Yat-sen University (SYSU). I obtained my PhD in hydrology and climate science from The Hong Kong Polytechnic University (PolyU) in 2022, under the supervision of Prof. Shuo Wang. Before joining SYSU, I was a postdoctoral researcher in the Hydro-Climate Extremes Research Group led by Prof. Louise Slater at the University of Oxford.</p>
 <p>My research focuses on extreme weather and climate events, machine learning-based flood prediction, climate change impacts, multivariate statistics, including copulas and pair-copula constructions, and hydrological modelling. I use machine learning methods and climate model outputs to improve global flood prediction and projection. I also develop and apply multivariate probabilistic approaches to assess the characteristics, hazards, and risks of hydroclimate extremes under climate change. In addition, I use climate simulations and hydrological models to investigate future changes in concurrent and consecutive water-related hazards in a warming climate.</p>
 <p>Feel free to get in touch and share your ideas by <a href="mailto:zhangben@mail.sysu.edu.cn">email</a>.</p>
@@ -321,9 +325,10 @@
 <li>Zhang, B., Wang, S., Wang, Y. (2019). Copula-based convection-permitting projections of future changes in multivariate drought characteristics. Journal of Geophysical Research: Atmospheres, 124(14), 7460-7483.</li>
 </ol>
 
-                </div>
-            
-             
+  </div>
+
+
+
             
 
 
@@ -346,9 +351,9 @@
 </script>
 
 
-            
+
             </div>
-            
+
             
 
 <div class="
@@ -669,23 +674,49 @@
 
 
 <script type="text/javascript">
-    
     var $zh = document.querySelector(".zh");
     var $en = document.querySelector(".en");
-    var $select = document.querySelector("select");
+    var $select = document.querySelector(".sel-lang");
+    var LANG_KEY = "sitePreferredLang";
 
     
     function getLang() { return new URLSearchParams(document.location.search).get("lang") }
 
     function setLang(newLang) {
-        var params = new URLSearchParams(document.location.search)
-        params.set("lang", newLang)
-        document.location.search = params.toString()  
+        window.localStorage.setItem(LANG_KEY, newLang);
+        var params = new URLSearchParams(document.location.search);
+        params.set("lang", newLang);
+        document.location.search = params.toString();
+    }
+
+    function setNavLang(lang) {
+        var labels = {
+            en: {
+                "/": "Home",
+                "/research/": "Research",
+                "/publication/": "Publications",
+                "/categories/project/": "Project",
+                "/about/": "CV"
+            },
+            zh: {
+                "/": "首页",
+                "/research/": "研究",
+                "/publication/": "论文",
+                "/categories/project/": "项目",
+                "/about/": "简历"
+            }
+        };
+        document.querySelectorAll(".navbar-custom .nav a").forEach(function(link) {
+            var path = new URL(link.href, document.location.origin).pathname;
+            if (labels[lang][path]) {
+                link.textContent = labels[lang][path];
+            }
+        });
     }
 
     
     function _render() {
-        var lang = getLang()
+        var lang = getLang() || window.localStorage.getItem(LANG_KEY) || "en";
         
         if (lang == "zh") {
             $select.selectedIndex = 0;
@@ -701,6 +732,7 @@
             $zh.style.display = "none";
             $zh.classList.remove("active");
         }
+        setNavLang(lang);
         
         generateCatalog(".catalog-body");
     }
@@ -715,7 +747,28 @@
         setLang(lang)
     }
 
+    function inferInitialLang() {
+        if (getLang() || window.localStorage.getItem(LANG_KEY)) {
+            return;
+        }
+
+        var browserLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
+        var browserGuess = browserLang.indexOf("zh") === 0 ? "zh" : "en";
+
+        fetch("https://ipapi.co/json/")
+            .then(function(response) { return response.ok ? response.json() : null; })
+            .then(function(data) {
+                var country = data && data.country_code;
+                var zhRegions = ["CN", "HK", "MO", "TW"];
+                setLang(zhRegions.indexOf(country) >= 0 ? "zh" : "en");
+            })
+            .catch(function() {
+                setLang(browserGuess);
+            });
+    }
+
     
+    inferInitialLang();
     _render();
 </script>
 

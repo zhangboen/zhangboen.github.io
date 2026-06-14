@@ -258,7 +258,58 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-         	<h2 id="research-directions">Research Directions</h2>
+                
+
+  
+
+
+
+   
+ <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+    <option value="0" selected> 中文 | Chinese </option>
+    <option value="1"> 英文 | English </option>
+</select>
+  
+  
+
+  <div class="zh post-container">
+    <h2 id="研究方向">研究方向</h2>
+<p>我们的研究聚焦于全球变暖背景下水文气候极端事件的理解、预测和风险评估。我们结合气候观测、模式模拟、水文建模、机器学习和概率风险分析，研究洪水、干旱、热浪以及复合水相关灾害。</p>
+<h3 id="复合事件">复合事件</h3>
+<p>我们关注复合事件的变化及其影响，包括干旱与热浪的并发，以及干湿急转事件。研究重点是这些事件在变暖气候下如何发生变化、由哪些过程驱动，以及会如何影响社会和生态系统。</p>
+<h3 id="气候极端事件与不平等">气候极端事件与不平等</h3>
+<p>气候极端事件对不同群体的影响并不相同。我们研究洪水、干旱、热浪和水文气候急剧转变如何与社会经济脆弱性、暴露度和适应能力相互作用，从而理解谁更容易受到新兴气候风险影响，以及其中的原因。</p>
+<p>
+  <img src="/img/research/extreme-hydroclimate-inequality.jpg" alt="气候极端事件与不平等">
+
+</p>
+<h3 id="多变量水文极端事件评估">多变量水文极端事件评估</h3>
+<p>我们研究气候变化背景下洪水和干旱的变化特征，量化其频率、强度、空间格局和社会经济影响，并重点关注风险评估和未来预估。</p>
+<p>
+  <img src="/img/research/extreme-hydroclimate-risk.jpg" alt="极端水文气候事件风险评估">
+
+</p>
+<h3 id="水文预报">水文预报</h3>
+<p>我们发展数据驱动和过程驱动的水文预报方法，用于流域和更大空间尺度的水相关灾害预测。相关研究整合气候信息、水文模型、河网数据和机器学习方法，以提升水文灾害预报能力。</p>
+<p>
+  <img src="/img/research/hydrological-forecasting-framework.png" alt="水文预报框架">
+
+</p>
+<div class="research-gif-grid">
+  <figure>
+    <figcaption>基于 MERIT Hydro 的逐日河流流量模拟</figcaption>
+    <img src="/img/research/river-discharge-merit.gif" alt="基于 MERIT Hydro 的逐日河流流量模拟">
+  </figure>
+  <figure>
+    <figcaption>基于 GRIT Hydro 的逐日河流流量模拟</figcaption>
+    <img src="/img/research/river-discharge-grit.gif" alt="基于 GRIT Hydro 的逐日河流流量模拟">
+  </figure>
+</div>
+
+  </div>
+
+  <div class="en post-container">
+    <h2 id="research-directions">Research Directions</h2>
 <p>Our research focuses on understanding, predicting, and assessing hydroclimate extremes in a warming climate. We combine climate observations, model simulations, hydrological modelling, machine learning, and probabilistic risk analysis to study floods, droughts, heatwaves, and compound water-related hazards.</p>
 <h3 id="compound-events">Compound Events</h3>
 <p>We are interested in how and why compound events, including concurrent droughts and heatwaves as well as dry-wet abrupt alternation, are changing and affecting our society in a warming climate.</p>
@@ -290,6 +341,9 @@
     <img src="/img/research/river-discharge-grit.gif" alt="Simulated daily river discharge using GRIT Hydro">
   </figure>
 </div>
+
+  </div>
+
 
                 
 
@@ -541,6 +595,105 @@
 </script>
 
 
+
+<script type="text/javascript">
+    var $zh = document.querySelector(".zh");
+    var $en = document.querySelector(".en");
+    var $select = document.querySelector(".sel-lang");
+    var LANG_KEY = "sitePreferredLang";
+
+    
+    function getLang() { return new URLSearchParams(document.location.search).get("lang") }
+
+    function setLang(newLang) {
+        window.localStorage.setItem(LANG_KEY, newLang);
+        var params = new URLSearchParams(document.location.search);
+        params.set("lang", newLang);
+        document.location.search = params.toString();
+    }
+
+    function setNavLang(lang) {
+        var labels = {
+            en: {
+                "/": "Home",
+                "/research/": "Research",
+                "/publication/": "Publications",
+                "/categories/project/": "Project",
+                "/about/": "CV"
+            },
+            zh: {
+                "/": "首页",
+                "/research/": "研究",
+                "/publication/": "论文",
+                "/categories/project/": "项目",
+                "/about/": "简历"
+            }
+        };
+        document.querySelectorAll(".navbar-custom .nav a").forEach(function(link) {
+            var path = new URL(link.href, document.location.origin).pathname;
+            if (labels[lang][path]) {
+                link.textContent = labels[lang][path];
+            }
+        });
+    }
+
+    
+    function _render() {
+        var lang = getLang() || window.localStorage.getItem(LANG_KEY) || "en";
+        
+        if (lang == "zh") {
+            $select.selectedIndex = 0;
+            $zh.style.display = "block";
+            $zh.classList.add("active");
+            $en.style.display = "none";
+            $en.classList.remove("active");
+            
+        } else {
+            $select.selectedIndex = 1;
+            $en.style.display = "block";
+            $en.classList.add("active");
+            $zh.style.display = "none";
+            $zh.classList.remove("active");
+        }
+        setNavLang(lang);
+        
+        generateCatalog(".catalog-body");
+    }
+
+    
+    function onLanChange(index) {
+        if (index == 0) {
+            lang = "zh"
+        } else {
+            lang = "en"
+        }
+        setLang(lang)
+    }
+
+    function inferInitialLang() {
+        if (getLang() || window.localStorage.getItem(LANG_KEY)) {
+            return;
+        }
+
+        var browserLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
+        var browserGuess = browserLang.indexOf("zh") === 0 ? "zh" : "en";
+
+        fetch("https://ipapi.co/json/")
+            .then(function(response) { return response.ok ? response.json() : null; })
+            .then(function(data) {
+                var country = data && data.country_code;
+                var zhRegions = ["CN", "HK", "MO", "TW"];
+                setLang(zhRegions.indexOf(country) >= 0 ? "zh" : "en");
+            })
+            .catch(function() {
+                setLang(browserGuess);
+            });
+    }
+
+    
+    inferInitialLang();
+    _render();
+</script>
 
 
 
