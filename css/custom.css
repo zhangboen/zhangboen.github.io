@@ -91,3 +91,33 @@ footer .list-inline.text-center {
     letter-spacing: 0;
     text-transform: none;
 }
+
+.research-gif-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: start;
+    margin-top: 20px;
+}
+
+.research-gif-grid figure {
+    margin: 0;
+}
+
+.research-gif-grid figcaption {
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.research-gif-grid img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 767px) {
+    .research-gif-grid {
+        grid-template-columns: 1fr;
+    }
+}
