@@ -138,6 +138,9 @@
                     
                         <li><a href="/about/">CV</a></li>
                     
+                    <li>
+                        <a href="#" id="language-toggle" title="Switch language">中文</a>
+                    </li>
 		            <li>
                         <a href="/search"><i class="fa fa-search"></i></a>
 		           </li>
@@ -264,11 +267,6 @@
 
 
 
-   
- <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
-    <option value="0" selected> 中文 | Chinese </option>
-    <option value="1"> 英文 | English </option>
-</select>
   
   
 
@@ -614,106 +612,126 @@
 </script>
 
 
-
 <script type="text/javascript">
-    var $zh = document.querySelector(".zh");
-    var $en = document.querySelector(".en");
-    var $select = document.querySelector(".sel-lang");
-    var LANG_KEY = "sitePreferredLang";
+    (function() {
+        var LANG_KEY = "sitePreferredLang";
 
-    
-    function getLang() { return new URLSearchParams(document.location.search).get("lang") }
-
-    function setLang(newLang) {
-        window.localStorage.setItem(LANG_KEY, newLang);
-        var params = new URLSearchParams(document.location.search);
-        params.set("lang", newLang);
-        document.location.search = params.toString();
-    }
-
-    function setNavLang(lang) {
-        var labels = {
-            en: {
-                "/": "Home",
-                "/research/": "Research",
-                "/publication/": "Publications",
-                "/categories/project/": "Project",
-                "/about/": "CV"
-            },
-            zh: {
-                "/": "首页",
-                "/research/": "研究",
-                "/publication/": "论文",
-                "/categories/project/": "项目",
-                "/about/": "简历"
-            }
-        };
-        document.querySelectorAll(".navbar-custom .nav a").forEach(function(link) {
-            var path = new URL(link.href, document.location.origin).pathname;
-            if (labels[lang][path]) {
-                link.textContent = labels[lang][path];
-            }
-        });
-    }
-
-    
-    function _render() {
-        var lang = getLang() || window.localStorage.getItem(LANG_KEY) || "en";
-        
-        if (lang == "zh") {
-            $select.selectedIndex = 0;
-            $zh.style.display = "block";
-            $zh.classList.add("active");
-            $en.style.display = "none";
-            $en.classList.remove("active");
-            
-        } else {
-            $select.selectedIndex = 1;
-            $en.style.display = "block";
-            $en.classList.add("active");
-            $zh.style.display = "none";
-            $zh.classList.remove("active");
-        }
-        setNavLang(lang);
-        
-        generateCatalog(".catalog-body");
-    }
-
-    
-    function onLanChange(index) {
-        if (index == 0) {
-            lang = "zh"
-        } else {
-            lang = "en"
-        }
-        setLang(lang)
-    }
-
-    function inferInitialLang() {
-        if (getLang() || window.localStorage.getItem(LANG_KEY)) {
-            return;
+        function getQueryLang() {
+            return new URLSearchParams(document.location.search).get("lang");
         }
 
-        var browserLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
-        var browserGuess = browserLang.indexOf("zh") === 0 ? "zh" : "en";
+        function updateQueryLang(lang) {
+            var params = new URLSearchParams(document.location.search);
+            params.set("lang", lang);
+            var newUrl = document.location.pathname + "?" + params.toString() + document.location.hash;
+            window.history.replaceState({}, "", newUrl);
+        }
 
-        fetch("https://ipapi.co/json/")
-            .then(function(response) { return response.ok ? response.json() : null; })
-            .then(function(data) {
-                var country = data && data.country_code;
-                var zhRegions = ["CN", "HK", "MO", "TW"];
-                setLang(zhRegions.indexOf(country) >= 0 ? "zh" : "en");
-            })
-            .catch(function() {
-                setLang(browserGuess);
+        function currentLang() {
+            return getQueryLang() || window.localStorage.getItem(LANG_KEY) || "en";
+        }
+
+        function setNavLang(lang) {
+            var labels = {
+                en: {
+                    "/": "Home",
+                    "/research/": "Research",
+                    "/publication/": "Publications",
+                    "/categories/project/": "Project",
+                    "/about/": "CV"
+                },
+                zh: {
+                    "/": "\u9996\u9875",
+                    "/research/": "\u7814\u7a76",
+                    "/publication/": "\u8bba\u6587",
+                    "/categories/project/": "\u9879\u76ee",
+                    "/about/": "\u7b80\u5386"
+                }
+            };
+
+            document.querySelectorAll(".navbar-custom .nav a").forEach(function(link) {
+                if (link.id === "language-toggle" || link.id === "theme-toggle") {
+                    return;
+                }
+                var path = new URL(link.href, document.location.origin).pathname;
+                if (labels[lang][path]) {
+                    link.textContent = labels[lang][path];
+                }
             });
-    }
+        }
 
-    
-    inferInitialLang();
-    _render();
+        function setToggleLabel(lang) {
+            var toggle = document.getElementById("language-toggle");
+            if (!toggle) {
+                return;
+            }
+            toggle.textContent = lang === "zh" ? "EN" : "\u4e2d\u6587";
+            toggle.title = lang === "zh" ? "Switch to English" : "\u5207\u6362\u5230\u4e2d\u6587";
+        }
+
+        function renderLanguage(lang) {
+            var zhBlocks = document.querySelectorAll(".zh");
+            var enBlocks = document.querySelectorAll(".en");
+
+            zhBlocks.forEach(function(block) {
+                block.style.display = lang === "zh" ? "block" : "none";
+                block.classList.toggle("active", lang === "zh");
+            });
+
+            enBlocks.forEach(function(block) {
+                block.style.display = lang === "zh" ? "none" : "block";
+                block.classList.toggle("active", lang !== "zh");
+            });
+
+            setNavLang(lang);
+            setToggleLabel(lang);
+
+            if (typeof generateCatalog === "function" && document.querySelector(".catalog-body")) {
+                generateCatalog(".catalog-body");
+            }
+        }
+
+        function setLanguage(lang) {
+            window.localStorage.setItem(LANG_KEY, lang);
+            updateQueryLang(lang);
+            renderLanguage(lang);
+        }
+
+        function inferInitialLang() {
+            if (getQueryLang() || window.localStorage.getItem(LANG_KEY)) {
+                renderLanguage(currentLang());
+                return;
+            }
+
+            var browserLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
+            var browserGuess = browserLang.indexOf("zh") === 0 ? "zh" : "en";
+
+            renderLanguage(browserGuess);
+
+            fetch("https://ipapi.co/json/")
+                .then(function(response) { return response.ok ? response.json() : null; })
+                .then(function(data) {
+                    var country = data && data.country_code;
+                    var zhRegions = ["CN", "HK", "MO", "TW"];
+                    setLanguage(zhRegions.indexOf(country) >= 0 ? "zh" : "en");
+                })
+                .catch(function() {
+                    setLanguage(browserGuess);
+                });
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var toggle = document.getElementById("language-toggle");
+            if (toggle) {
+                toggle.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    setLanguage(currentLang() === "zh" ? "en" : "zh");
+                });
+            }
+            inferInitialLang();
+        });
+    })();
 </script>
-
 
 
 
