@@ -137,9 +137,6 @@
                     
                         <li><a href="/about/">CV</a></li>
                     
-                    <li>
-                        <a href="#" id="language-toggle" title="Switch language">中文</a>
-                    </li>
 		            <li>
                         <a href="/search"><i class="fa fa-search"></i></a>
 		           </li>
@@ -261,17 +258,7 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                
-
-  
-
-
-
-  
-  
-
-  <div class="zh post-container">
-    <h2 id="代表性论文">代表性论文</h2>
+                <h2 id="selected-publications">Selected Publications</h2>
 <ol>
 <li>Zhang, B., Wang, S., Slater, L. (2024). Anthropogenic climate change doubled the frequency of compound drought and heatwaves in low-income regions. Communications Earth &amp; Environment, 5, 715.</li>
 <li>Zhang, B., Wang, S., Zscheischler, J., &amp; Moradkhani, H. (2023). Higher exposure of poorer people to emerging weather whiplash in a warmer world. Geophysical Research Letters, 50, e2023GL105640.</li>
@@ -282,23 +269,6 @@
 <li>Zhang, B., Wang, S. (2021). Probabilistic characterization of extreme storm surges induced by tropical cyclones. Journal of Geophysical Research: Atmospheres, 126(3), e2020JD033557.</li>
 <li>Zhang, B., Wang, S., Wang, Y. (2019). Copula-based convection-permitting projections of future changes in multivariate drought characteristics. Journal of Geophysical Research: Atmospheres, 124(14), 7460-7483.</li>
 </ol>
-
-  </div>
-
-  <div class="en post-container">
-    <h2 id="selected-publications">Selected Publications</h2>
-<ol>
-<li>Zhang, B., Wang, S., Slater, L. (2024). Anthropogenic climate change doubled the frequency of compound drought and heatwaves in low-income regions. Communications Earth &amp; Environment, 5, 715.</li>
-<li>Zhang, B., Wang, S., Zscheischler, J., &amp; Moradkhani, H. (2023). Higher exposure of poorer people to emerging weather whiplash in a warmer world. Geophysical Research Letters, 50, e2023GL105640.</li>
-<li>Zhang, B., Wang, S., Moradkhani, H., Slater, L., Liu, J. (2022). A vine copula-based ensemble projection of precipitation intensity-duration-frequency curves at sub-daily to multi-day time scales. Water Resources Research, 58, e2022WR032658.</li>
-<li>Zhang, B., Wang, S., Qing, Y., Zhu, J., Wang, D., Liu, J. (2022). A vine copula-based polynomial chaos framework for improving multi-model hydroclimatic projections at a multi-decadal convection-permitting scale. Water Resources Research, 58, e2022WR031954.</li>
-<li>Zhang, B., Wang, S., Zhu, J. (2022). A weighted ensemble of regional climate projections for exploring the spatiotemporal evolution of multidimensional drought risks in a changing climate. Climate Dynamics, 58(1), 49-68.</li>
-<li>Zhang, B., Wang, S., Wang, Y. (2021). Probabilistic projections of multidimensional flood risks at a convection-permitting scale. Water Resources Research, 57(1), e2020WR028582.</li>
-<li>Zhang, B., Wang, S. (2021). Probabilistic characterization of extreme storm surges induced by tropical cyclones. Journal of Geophysical Research: Atmospheres, 126(3), e2020JD033557.</li>
-<li>Zhang, B., Wang, S., Wang, Y. (2019). Copula-based convection-permitting projections of future changes in multivariate drought characteristics. Journal of Geophysical Research: Atmospheres, 124(14), 7460-7483.</li>
-</ol>
-
-  </div>
 
 
                 
@@ -550,127 +520,6 @@
     });
 </script>
 
-
-<script type="text/javascript">
-    (function() {
-        var LANG_KEY = "sitePreferredLang";
-
-        function getQueryLang() {
-            return new URLSearchParams(document.location.search).get("lang");
-        }
-
-        function updateQueryLang(lang) {
-            var params = new URLSearchParams(document.location.search);
-            params.set("lang", lang);
-            var newUrl = document.location.pathname + "?" + params.toString() + document.location.hash;
-            window.history.replaceState({}, "", newUrl);
-        }
-
-        function currentLang() {
-            return getQueryLang() || window.localStorage.getItem(LANG_KEY) || "en";
-        }
-
-        function setNavLang(lang) {
-            var labels = {
-                en: {
-                    "/": "Home",
-                    "/research/": "Research",
-                    "/publication/": "Publications",
-                    "/categories/project/": "Project",
-                    "/about/": "CV"
-                },
-                zh: {
-                    "/": "\u9996\u9875",
-                    "/research/": "\u7814\u7a76",
-                    "/publication/": "\u8bba\u6587",
-                    "/categories/project/": "\u9879\u76ee",
-                    "/about/": "\u7b80\u5386"
-                }
-            };
-
-            document.querySelectorAll(".navbar-custom .nav a").forEach(function(link) {
-                if (link.id === "language-toggle" || link.id === "theme-toggle") {
-                    return;
-                }
-                var path = new URL(link.href, document.location.origin).pathname;
-                if (labels[lang][path]) {
-                    link.textContent = labels[lang][path];
-                }
-            });
-        }
-
-        function setToggleLabel(lang) {
-            var toggle = document.getElementById("language-toggle");
-            if (!toggle) {
-                return;
-            }
-            toggle.textContent = lang === "zh" ? "EN" : "\u4e2d\u6587";
-            toggle.title = lang === "zh" ? "Switch to English" : "\u5207\u6362\u5230\u4e2d\u6587";
-        }
-
-        function renderLanguage(lang) {
-            var zhBlocks = document.querySelectorAll(".zh");
-            var enBlocks = document.querySelectorAll(".en");
-
-            zhBlocks.forEach(function(block) {
-                block.style.display = lang === "zh" ? "block" : "none";
-                block.classList.toggle("active", lang === "zh");
-            });
-
-            enBlocks.forEach(function(block) {
-                block.style.display = lang === "zh" ? "none" : "block";
-                block.classList.toggle("active", lang !== "zh");
-            });
-
-            setNavLang(lang);
-            setToggleLabel(lang);
-
-            if (typeof generateCatalog === "function" && document.querySelector(".catalog-body")) {
-                generateCatalog(".catalog-body");
-            }
-        }
-
-        function setLanguage(lang) {
-            window.localStorage.setItem(LANG_KEY, lang);
-            updateQueryLang(lang);
-            renderLanguage(lang);
-        }
-
-        function inferInitialLang() {
-            if (getQueryLang() || window.localStorage.getItem(LANG_KEY)) {
-                renderLanguage(currentLang());
-                return;
-            }
-
-            var browserLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
-            var browserGuess = browserLang.indexOf("zh") === 0 ? "zh" : "en";
-
-            renderLanguage(browserGuess);
-
-            fetch("https://ipapi.co/json/")
-                .then(function(response) { return response.ok ? response.json() : null; })
-                .then(function(data) {
-                    var country = data && data.country_code;
-                    var zhRegions = ["CN", "HK", "MO", "TW"];
-                    setLanguage(zhRegions.indexOf(country) >= 0 ? "zh" : "en");
-                })
-                .catch(function() {
-                    setLanguage(browserGuess);
-                });
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            var toggle = document.getElementById("language-toggle");
-            if (toggle) {
-                toggle.addEventListener("click", function(event) {
-                    event.preventDefault();
-                    setLanguage(currentLang() === "zh" ? "en" : "zh");
-                });
-            }
-            inferInitialLang();
-        });
-    })();
-</script>
 
 
 

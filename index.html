@@ -138,9 +138,6 @@
                     
                         <li><a href="/about/">CV</a></li>
                     
-                    <li>
-                        <a href="#" id="language-toggle" title="Switch language">中文</a>
-                    </li>
 		            <li>
                         <a href="/search"><i class="fa fa-search"></i></a>
 		           </li>
@@ -261,29 +258,7 @@
       col-xs-12
       post-container
     ">
-      
-
-  
-
-
-
-  
-  
-
-  <div class="zh post-container">
-    <h2 id="张博恩">张博恩</h2>
-<p>Hydroclimate Extremes Lab 关注全球变暖背景下洪水、极端降雨以及复合事件的变化，包括干旱与热浪的并发，以及干湿状态之间的急剧转换。我们结合气候数据、水文模型、机器学习和统计方法，理解这些事件的形成机制，提升预测能力，并评估未来风险。</p>
-<p>我们的研究覆盖多个相互关联的方向。我们研究水文气候极端事件的变化特征和驱动机制，尤其关注洪水、干旱相关复合事件、极端降水和干湿急转。我们也发展数据驱动和过程驱动的方法，用于从流域到全球尺度的洪水预测与预估。此外，我们将气候模拟、复杂河网数据和概率风险模型结合起来，评估未来水相关灾害如何演变并影响社会。</p>
-<p>欢迎对水文气候研究、水文建模、气候变化、机器学习、GIS、遥感或环境数据科学感兴趣的学生、科研助理和博士后与我们联系。请通过邮件发送你的简历和简短的研究兴趣说明。</p>
-<h2 id="新闻">新闻</h2>
-<ul>
-<li>2026-03-02：我很高兴加入中山大学地理科学与规划学院，担任水文气候学助理教授。</li>
-</ul>
-
-  </div>
-
-  <div class="en post-container">
-    <h2 id="boen-zhang">Boen Zhang</h2>
+      <h2 id="boen-zhang">Boen Zhang</h2>
 <p>At the Hydroclimate Extremes Lab, we are interested in how floods, extreme rainfall, and compound events, including concurrent droughts and heatwaves as well as abrupt shifts between dry and wet conditions, are changing in a warming climate. We use climate data, hydrological models, machine learning, and statistical approaches to better understand these events, improve their prediction, and assess their future risks.</p>
 <p>Our research covers several connected topics. We study the changing patterns and drivers of hydroclimate extremes, especially floods, drought-related compound events, extreme precipitation, and dry–wet abrupt alternation. We also develop data-driven and process-based methods for flood prediction and projection, from river basins to the global scale. Another important part of our work is to combine climate simulations, complex river-network data, and probabilistic risk models to understand how future water-related hazards may evolve and affect society.</p>
 <p>We are happy to hear from students, Research Assistants, and Postdocs who would like to work on hydroclimate research, hydrological modelling, climate change, machine learning, GIS, remote sensing, or environmental data science. Please feel free to send me an email with your CV and a short description of your research interests.</p>
@@ -291,8 +266,6 @@
 <ul>
 <li>2026-03-02: I am delighted to join the School of Geography and Planning at Sun Yat-sen University as an Assistant Professor.</li>
 </ul>
-
-  </div>
 
 
     </div>
@@ -611,127 +584,6 @@
     });
 </script>
 
-
-<script type="text/javascript">
-    (function() {
-        var LANG_KEY = "sitePreferredLang";
-
-        function getQueryLang() {
-            return new URLSearchParams(document.location.search).get("lang");
-        }
-
-        function updateQueryLang(lang) {
-            var params = new URLSearchParams(document.location.search);
-            params.set("lang", lang);
-            var newUrl = document.location.pathname + "?" + params.toString() + document.location.hash;
-            window.history.replaceState({}, "", newUrl);
-        }
-
-        function currentLang() {
-            return getQueryLang() || window.localStorage.getItem(LANG_KEY) || "en";
-        }
-
-        function setNavLang(lang) {
-            var labels = {
-                en: {
-                    "/": "Home",
-                    "/research/": "Research",
-                    "/publication/": "Publications",
-                    "/categories/project/": "Project",
-                    "/about/": "CV"
-                },
-                zh: {
-                    "/": "\u9996\u9875",
-                    "/research/": "\u7814\u7a76",
-                    "/publication/": "\u8bba\u6587",
-                    "/categories/project/": "\u9879\u76ee",
-                    "/about/": "\u7b80\u5386"
-                }
-            };
-
-            document.querySelectorAll(".navbar-custom .nav a").forEach(function(link) {
-                if (link.id === "language-toggle" || link.id === "theme-toggle") {
-                    return;
-                }
-                var path = new URL(link.href, document.location.origin).pathname;
-                if (labels[lang][path]) {
-                    link.textContent = labels[lang][path];
-                }
-            });
-        }
-
-        function setToggleLabel(lang) {
-            var toggle = document.getElementById("language-toggle");
-            if (!toggle) {
-                return;
-            }
-            toggle.textContent = lang === "zh" ? "EN" : "\u4e2d\u6587";
-            toggle.title = lang === "zh" ? "Switch to English" : "\u5207\u6362\u5230\u4e2d\u6587";
-        }
-
-        function renderLanguage(lang) {
-            var zhBlocks = document.querySelectorAll(".zh");
-            var enBlocks = document.querySelectorAll(".en");
-
-            zhBlocks.forEach(function(block) {
-                block.style.display = lang === "zh" ? "block" : "none";
-                block.classList.toggle("active", lang === "zh");
-            });
-
-            enBlocks.forEach(function(block) {
-                block.style.display = lang === "zh" ? "none" : "block";
-                block.classList.toggle("active", lang !== "zh");
-            });
-
-            setNavLang(lang);
-            setToggleLabel(lang);
-
-            if (typeof generateCatalog === "function" && document.querySelector(".catalog-body")) {
-                generateCatalog(".catalog-body");
-            }
-        }
-
-        function setLanguage(lang) {
-            window.localStorage.setItem(LANG_KEY, lang);
-            updateQueryLang(lang);
-            renderLanguage(lang);
-        }
-
-        function inferInitialLang() {
-            if (getQueryLang() || window.localStorage.getItem(LANG_KEY)) {
-                renderLanguage(currentLang());
-                return;
-            }
-
-            var browserLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
-            var browserGuess = browserLang.indexOf("zh") === 0 ? "zh" : "en";
-
-            renderLanguage(browserGuess);
-
-            fetch("https://ipapi.co/json/")
-                .then(function(response) { return response.ok ? response.json() : null; })
-                .then(function(data) {
-                    var country = data && data.country_code;
-                    var zhRegions = ["CN", "HK", "MO", "TW"];
-                    setLanguage(zhRegions.indexOf(country) >= 0 ? "zh" : "en");
-                })
-                .catch(function() {
-                    setLanguage(browserGuess);
-                });
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            var toggle = document.getElementById("language-toggle");
-            if (toggle) {
-                toggle.addEventListener("click", function(event) {
-                    event.preventDefault();
-                    setLanguage(currentLang() === "zh" ? "en" : "zh");
-                });
-            }
-            inferInitialLang();
-        });
-    })();
-</script>
 
 
 
