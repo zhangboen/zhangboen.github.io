@@ -95,13 +95,18 @@ footer .list-inline.text-center {
 .research-gif-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 32px;
+    column-gap: 56px;
+    row-gap: 24px;
     align-items: start;
     margin-top: 20px;
 }
 
 .research-gif-grid figure {
     margin: 0;
+}
+
+.research-gif-grid figure:nth-child(2) {
+    padding-left: 12px;
 }
 
 .research-gif-grid figcaption {
@@ -143,6 +148,10 @@ footer .list-inline.text-center {
 @media only screen and (max-width: 767px) {
     .research-gif-grid {
         grid-template-columns: 1fr;
+    }
+
+    .research-gif-grid figure:nth-child(2) {
+        padding-left: 0;
     }
 
     .compound-event-grid {
