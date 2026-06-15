@@ -279,58 +279,57 @@
                 post-container">
 
                 <h1 id="people">People</h1>
+<section class="pi-profile">
+  <img src="/img/boen-people.jpg" alt="Boen Zhang" class="pi-profile-photo">
+  <div class="pi-profile-copy">
+    <p class="pi-profile-kicker">Principal Investigator</p>
+    <h2>Boen Zhang</h2>
+    <p>I am an Assistant Professor of Hydroclimatology in the School of Geography and Planning at Sun Yat-sen University and the PI of the Hydroclimate Extremes Lab.</p>
+    <p>My research studies how floods, extreme precipitation, droughts, heatwaves, and compound hydroclimate events are changing in a warming climate. I combine climate observations, model simulations, hydrological modelling, machine learning, and probabilistic approaches to improve prediction and assess future climate risk.</p>
+  </div>
+</section>
 <p>The Hydroclimate Extremes Lab is growing. We welcome students and researchers interested in hydroclimate extremes, flood prediction, compound events, climate risk, GIS, remote sensing, machine learning, and environmental data science.</p>
-<div class="member-grid">
-  <article class="member-card">
-    <div class="member-photo-placeholder">PI</div>
-    <h3>Boen Zhang</h3>
-    <p>Assistant Professor of Hydroclimatology</p>
-  </article>
-  <article class="member-card">
-    <div class="member-photo-placeholder">Open</div>
-    <h3>Prospective Students</h3>
-    <p>Hydroclimate extremes, hydrological modelling, machine learning, GIS, and climate risk.</p>
-  </article>
-  <article class="member-card">
-    <div class="member-photo-placeholder">Open</div>
-    <h3>Research Assistants and Postdocs</h3>
-    <p>Data-intensive hydroclimate research, flood forecasting, compound events, and environmental data science.</p>
-  </article>
-</div>
 <style>
-.member-grid {
+.pi-profile {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: minmax(160px, 220px) minmax(0, 1fr);
   gap: 24px;
-  margin-top: 28px;
-}
-
-.member-card {
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  padding: 18px;
-  background: #fff;
-}
-
-.member-photo-placeholder {
-  aspect-ratio: 4 / 3;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-  border-radius: 6px;
-  background: #eef4f3;
-  color: #667085;
-  font-weight: 600;
+  margin: 20px 0 30px;
 }
 
-.member-card h3 {
-  margin: 0 0 8px;
+.pi-profile-photo {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 8px;
+  display: block;
 }
 
-.member-card p {
+.pi-profile-copy h2 {
+  margin: 2px 0 12px;
+}
+
+.pi-profile-copy p {
+  margin: 0 0 12px;
+}
+
+.pi-profile-kicker {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
   margin: 0;
-  color: #667085;
+  color: #44656b;
+}
+
+@media only screen and (max-width: 767px) {
+  .pi-profile {
+    grid-template-columns: 1fr;
+  }
+
+  .pi-profile-photo {
+    max-width: 180px;
+  }
 }
 </style>
 
