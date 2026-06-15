@@ -14,18 +14,20 @@ font_size: L
 
 site_type: Person
 local_business_type: ''
-org_name: ''
-description: ''
-twitter: ''
+org_name: 'Sun Yat-sen University'
+description: 'Hydroclimate Extremes Lab led by Boen Zhang at Sun Yat-sen University, focusing on floods, extreme precipitation, droughts, heatwaves, compound events, hydrological forecasting, and climate risk.'
+twitter: 'zhangboenvip'
 
 # Contact (edit or remove options as required)
 
-email: boorn.zhang@connect.polyu.hk
-phone: +852 9371 4182
+email: zhangben@mail.sysu.edu.cn
+phone: ''
 address:
-  street: ZN606, 181 Chatham Road South
-  city: Kowloon
-  region: Hong Kong
+  street: School of Geography and Planning
+  city: Guangzhou
+  region: Guangdong
+  postcode: ''
+  country: China
 
 # Site header
 

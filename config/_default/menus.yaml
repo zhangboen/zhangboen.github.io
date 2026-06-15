@@ -10,6 +10,9 @@ main:
   - name: Publications
     url: '#posts'
     weight: 50
+  - name: CV
+    url: '#about'
+    weight: 60
   - name: Contact
     url: '#contact'
     weight: 70
