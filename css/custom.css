@@ -1,0 +1,123 @@
+.post-content-preview {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;      /* number of lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post-container ol,
+.post-container ul {
+    padding-left: 0.9em;
+}
+
+.post-container ol li,
+.post-container ul li {
+    padding-left: 0.1em;
+}
+
+.post-container h2 {
+    margin-bottom: 0;
+}
+
+.post-container h2 + p,
+.post-container h2 + ol,
+.post-container h2 + ul {
+    margin-top: 24px;
+}
+
+footer .list-inline.text-center {
+    display: none;
+}
+
+.intro-header .site-heading .subheading {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9), 0 0 18px rgba(0, 0, 0, 0.7);
+}
+
+.intro-header {
+    position: relative;
+    background-position: center center;
+}
+
+.intro-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.22) 42%, rgba(0, 0, 0, 0.36)),
+        linear-gradient(to right, rgba(0, 0, 0, 0.26), rgba(0, 0, 0, 0.05) 45%, rgba(0, 0, 0, 0.30));
+    pointer-events: none;
+}
+
+.intro-header .container {
+    position: relative;
+    z-index: 1;
+}
+
+.intro-header .site-heading {
+    padding: 86px 0 78px;
+}
+
+.intro-header .site-heading h1 {
+    font-size: 46px;
+    line-height: 1.08;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.85), 0 0 22px rgba(0, 0, 0, 0.55);
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav li a {
+    text-shadow: none;
+}
+
+.navbar-custom .navbar-brand {
+    font-size: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+    .intro-header .site-heading {
+        padding: 110px 0 92px;
+    }
+
+    .intro-header .site-heading h1 {
+        font-size: 58px;
+    }
+}
+.navbar-custom .nav li a {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.research-gif-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: start;
+    margin-top: 20px;
+}
+
+.research-gif-grid figure {
+    margin: 0;
+}
+
+.research-gif-grid figcaption {
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.research-gif-grid img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 767px) {
+    .research-gif-grid {
+        grid-template-columns: 1fr;
+    }
+}
